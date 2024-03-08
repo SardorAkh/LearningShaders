@@ -56,12 +56,13 @@ Shader "Learning/AdvancedTexturing/HLSL/PolarCoordinates"
                 return o;
             }
 
-            float2 cartesianToPolar(float cartUV)
+            float2 cartesianToPolar(float2 cartUV)
             {
                 float2 offset = cartUV - _Center;
                 float radius = length(offset) * 2;
                 float angle = atan2(offset.x, offset.y) / (2.0f * PI);
 
+                
                 return float2(radius, angle);
             }
             
